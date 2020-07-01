@@ -1,0 +1,34 @@
+.footer {
+  min-height: 100px;
+  background: red;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  margin: 3px;
+}
+
+.footerSpan {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: lightgrey;
+  font-size: medium;
+}
+
+.blueSpan {
+  color: blue;
+}
+
+.redSpan {
+  color: red;
+}
+
+.yellowSpan {
+  color: orange;
+}
+
+.greenSpan {
+  color: green;
+}

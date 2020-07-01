@@ -9,16 +9,17 @@ export default {
   getBook: function(id) {
     return axios.get("/api/books/" + id);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
-  },
   // Saves a book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   },
+  // Deletes the book with the given id
+  deleteBook: function(id) {
+    return axios.delete("/api/books/" + id);
+  },
   getSearchedBooks: function(title) {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + title + "&key=AIzaSyAzh3hgpTEaEpBI9WMYYqbaXI1bEb0rn4o");
+    console.log("TITLE:", title);
+    return axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + title.title + "&key=AIzaSyAzh3hgpTEaEpBI9WMYYqbaXI1bEb0rn4o");
   }
 };
 

@@ -39,8 +39,8 @@ function Saved() {
         <Row>
           <Col size="md-12 sm-12">
             <Jumbotron>
-              <h1>React Google Books Search</h1>
-              <h2>Search for and Save Books of Interest</h2>
+              <h1 style={{ color: "green" }}>React Google Books Search</h1>
+              <h2 style={{ color: "orange" }}>Search for and Save Books of Interest</h2>
             </Jumbotron>
             <h3>Saved Books</h3>
 
@@ -50,7 +50,7 @@ function Saved() {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title} by {book.authors}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />

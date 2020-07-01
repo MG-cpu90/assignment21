@@ -7,11 +7,21 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import { render } from "react-dom";
+
+// class Books extends Component {
+
 
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
+
+  // state = {
+  //   searchRes: [],
+  //   query: "",
+  //   books: []
+  // };
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -36,47 +46,54 @@ function Books() {
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
+    // console.log("event.target", event.target);
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject({...formObject, [name]: value});
+    console.log("formObject", formObject);
   };
-
 
   // When the form is submitted, use the API.saveBook method to save the book data
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     console.log("Search Button clicked");
+    console.log("event.target.value 2", event.target.value);
 
     API.getSearchedBooks({
-      title: formObject.name
+      title: formObject.title
     })
     .then(res => {
       if (res.data.status === "error") {
         throw new Error(res.data.message);
       }
-      this.setState({ results: res.data.message, error: "" });
       console.log("Response:", res);
+      console.log(res.data.items);
+      setBooks(res.data.items);
+      console.log(books);
+
     })
         .catch(err => console.log(err));
 
     // if (formObject.title && formObject.author) {
     //   API.saveBook({
     //     title: formObject.title,
-    //     author: formObject.author,
-    //     synopsis: formObject.synopsis
+    //     authors: formObject.authors,
+    //     description: formObject.description
     //   })
     //     .then(res => loadBooks())
     //     .catch(err => console.log(err));
     // }
   };
 
+  // render() {
+
     return (
       <Container fluid>
         <Row>
           <Col size="md-12 s-12">
             <Jumbotron>
-              <h1>React Google Books Search</h1>
-              <h2>Search for and Save Books of Interest</h2>
+              <h1 style={{ color: "green" }}>React Google Books Search</h1>
+              <h2 style={{ color: "orange" }}>Search for and Save Books of Interest</h2>
             </Jumbotron>
             <h3>Book Search</h3>
             <form>
@@ -87,7 +104,7 @@ function Books() {
               />
 
               <FormBtn
-                // disabled={!(formObject.author && formObject.title)}
+                // disabled={!(formObject.authors && formObject.title)}
                 onClick={handleFormSubmit}
               >
                 Search
@@ -99,12 +116,13 @@ function Books() {
           <Col size="md 12 s-12">
           <h3>Results</h3>
           {books.length ? (
-              <List>
+            <List>
                 {books.map(book => (
+            // console.log(books);
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.volumeInfo.title}, by {book.volumeInfo.authors}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />
@@ -119,6 +137,7 @@ function Books() {
         </Row>
       </Container>
     );
+      // }
   }
 
 

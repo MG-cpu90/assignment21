@@ -22,7 +22,7 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {book.title} by {book.author}
+                {book.title} by {book.authors}
               </h1>
             </Jumbotron>
           </Col>
@@ -32,7 +32,7 @@ function Detail(props) {
             <article>
               <h1>Synopsis</h1>
               <p>
-                {book.synopsis}
+                {book.synposis}
               </p>
             </article>
           </Col>
