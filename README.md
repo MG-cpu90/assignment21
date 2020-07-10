@@ -74,6 +74,6 @@ The user is able to:
 
 ## Submission on BCS
 
-* The URL to the deployed application: 
+* The URL to the deployed application: https://reactgoogle-booksearch.herokuapp.com/
 
 * The URL to the Github repository: https://github.com/MG-cpu90/assignment21 
