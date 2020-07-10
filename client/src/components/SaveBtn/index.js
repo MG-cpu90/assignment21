@@ -10,7 +10,6 @@ function SaveBtn(props) {
       {...props}
       role="button"
       tabIndex="0"
-      onClick={() => console.log("Book saved!")}
     >
       <i className="icon-save"></i>
     </button>

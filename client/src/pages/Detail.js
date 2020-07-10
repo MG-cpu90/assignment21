@@ -30,16 +30,22 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Synopsis</h1>
+              <h1>Description</h1>
               <p>
-                {book.synposis}
+                {book.description}
               </p>
             </article>
+          </Col>
+          <Col size="md-2 md-offset-1">
+            <img src={book.image}></img>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Search</Link>
+          </Col>
+          <Col size="md-2">
+            <Link to="/Saved">← Back to Saved</Link>
           </Col>
         </Row>
       </Container>

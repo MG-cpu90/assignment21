@@ -42,7 +42,7 @@ function Saved() {
               <h1 style={{ color: "green" }}>React Google Books Search</h1>
               <h2 style={{ color: "orange" }}>Search for and Save Books of Interest</h2>
             </Jumbotron>
-            <h3>Saved Books</h3>
+            <h3>Saved <span style={{ color: "blue" }}>Books</span></h3>
 
             {books.length ? (
               <List>
@@ -58,7 +58,7 @@ function Saved() {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h4 style={{ color: "red", fontStyle: "italic" }}>No Results to Display</h4>
             )}
           </Col>
         </Row>
