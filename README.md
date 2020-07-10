@@ -65,6 +65,7 @@ The user is able to:
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Google Chrome](http://www.google.com/chrome)
 * [Node.js](https://nodejs.org/en/)
+* Google Books API
 * MongoDB
 * Git/Terminal
 * [GitHub](https://github.com/)
