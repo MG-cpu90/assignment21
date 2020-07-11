@@ -2,7 +2,6 @@ import React from "react";
 
 function Nav() {
   return (
-
     <nav
       className="navbar navbar-expand-lg navbar-dark"
       style={{ backgroundColor: "blue" }}
@@ -23,12 +22,18 @@ function Nav() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <div className="navbar-nav">
-          <a className="nav-link" href="/">
-            Search
-          </a>
-          <a className="nav-link" href="/Saved">
-            Saved
-          </a>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Search
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Saved">
+                Saved
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
