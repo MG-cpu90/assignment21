@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+// import AlertSave from "../components/AlertSave";
+// import SaveModal from "../components/SaveModal";
 import { render } from "react-dom";
 
 // class Books extends Component {
@@ -16,6 +18,10 @@ function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(true);
+
+  const handleShow = () => setShow(true);
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -44,6 +50,8 @@ function Books() {
     link: book.volumeInfo.previewLink
 
   })
+    // .then(render(<AlertSave />))
+    // .then(handleShow())
     .then(res => console.log("response", res))
     .catch(err => console.log(err));
   }
@@ -110,12 +118,16 @@ function Books() {
           <h3>Results</h3>
           {books.length ? (
             <List>
+              {/* <SaveModal /> */}
                 {books.map(book => (
                   <ListItem key={book._id}>
                       <strong>
                         {book.volumeInfo.title}, by {book.volumeInfo.authors}
                       </strong>
-                    <SaveBtn onClick={() => saveBook(book._id)} />
+                    <SaveBtn onClick={() => {
+                      saveBook(book._id);
+                      // handleShow();
+                      }} />
                   </ListItem>
                 ))}
               </List>

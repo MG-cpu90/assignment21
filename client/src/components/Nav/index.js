@@ -20,7 +20,7 @@ function Nav() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse show" id="navbarNav">
         <div className="navbar-nav">
           <ul className="navbar-nav">
             <li className="nav-item">
