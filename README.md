@@ -47,9 +47,9 @@ The user is able to:
 
 * Delete the book from a collection
 
-## Installation
+## Usage and Installation
 
-* After the repository has been cloned, run npm install in the terminal window inside the project's root directory
+* After the GitHub repository has been cloned to your local device, run "npm install" in the terminal window inside the project's root directory
 
 * Open MongoDB inside another terminal window by running either "mongo" or "mongod"
 
