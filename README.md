@@ -47,6 +47,15 @@ The user is able to:
 
 * Delete the book from a collection
 
+## Installation
+
+* After the repository has been cloned, run npm install in the terminal window inside the project's root directory
+
+* Open MongoDB inside another terminal window by running either "mongo" or "mongod"
+
+* Run the seed file by running "npm run seed" in the original terminal window
+
+* Run npm start in the original terminal window and you will be redirected to http://localhost:3000/
 
 ## Application Screenshot
 
