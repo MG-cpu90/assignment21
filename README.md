@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this assignment, I created a full-stack Google B◊ooks search app with React. The assignment required me to break up the application's UI into components, manage component state, and respond to user events.
+In this assignment, I created a MERN-stack Google B◊ooks search app with React. The assignment required me to break up the application's UI into components, manage component state, and respond to user events.
 
 ## User Story
 
