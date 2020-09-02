@@ -11,9 +11,6 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 // import SaveModal from "../components/SaveModal";
 import { render } from "react-dom";
 
-// class Books extends Component {
-
-
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
